@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import {useState, useEffect} from "react";
+import Login from './components/Login';
+import { Route } from "react-router-dom";
 
 function App() {
+  const [loggedInUser, setCurrentLoggedInUser] = useState("");
+
+  useEffect(() => {
+    async function checkLoggedIn() {
+      const response = await axios.get(
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/isloggedin`,
+        { withCredentials: true }
+      );
+      if (response.data.firstName) {
+        setCurrentLoggedInUser(response.data);
+      }
+    }
+    checkLoggedIn();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Login />
     </div>
   );
 }
