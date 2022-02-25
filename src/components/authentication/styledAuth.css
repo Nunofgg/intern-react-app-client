@@ -1,0 +1,33 @@
+.auth-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.page-title {
+    margin-top: 80px;
+}
+
+.input-form {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-input {
+    margin-top: 20px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.submit-button {
+    margin-top: 20px;
+    color: #fff;
+    background-color: #566063;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}

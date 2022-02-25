@@ -1,0 +1,28 @@
+.post-card {
+    width: 250px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4C5F6B;
+    border-radius: 14px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.post-card-top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.post-card-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+}

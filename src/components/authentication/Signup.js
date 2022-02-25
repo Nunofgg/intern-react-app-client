@@ -1,10 +1,11 @@
 import React, { useState, useContext } from "react";
+import './styledAuth.css';
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { LoggedUserConsumer } from "../context/loggedUser";
+import { LoggedUserConsumer } from "../../context/loggedUser";
 
-function Login({ setCurrentLoggedInUser }) {
+function Signup({ setCurrentLoggedInUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -19,43 +20,43 @@ function Login({ setCurrentLoggedInUser }) {
     };
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}/login`,
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/signup`,
         body,
         { withCredentials: true }
       );
       if (response.data.username) {
-        toast.success("Login success");
+        toast.success("Signup success");
         setCurrentLoggedInUser(response.data); //Comes from the app component
-        navigate.push("/products");
+        navigate.push("/profile");
       }
     } catch (e) {
-      toast.error("Invalid login");
+      toast.error("Invalid signup");
     }
   };
 
   return (
-    <div className="login-container">
-        <form onSubmit={handleFormSubmit}>
-          <h2>Login</h2>
-          <label>email</label>
+    <div className="auth-container">
+        <h2 className="page-title">Signup</h2>
+        <form className="input-form" onSubmit={handleFormSubmit}>
           <input
+            placeholder="username"
             type="text"
             onChange={(e) => setUsername(e.target.value)}
             value={username}
-            className="signup-user-input"
+            className="user-input"
           />
 
-          <label>password</label>
           <input
+          placeholder="password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
-            className="signup-user-input"
+            className="user-input"
           />
-          <p>Don't have an account? Signup <NavLink to="/signup">here!</NavLink></p>
+          <button className="submit-button" type="submit">Create</button>
         </form>
     </div>
   );
 }
 
-export default Login;
+export default Signup;

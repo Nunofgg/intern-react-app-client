@@ -1,0 +1,70 @@
+.nav-bar {
+    margin: 0;
+    width: 100vw;
+    height: 100px;
+    background-color: #2B3D41;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease-in;
+}
+
+.nav-bar:hover {
+    background-color: #2b3d411c;
+}
+
+.nav-bar-logo {
+    width: 60px;
+    height: 40px;
+    margin-left: 40px;
+}
+
+.nav-bar-center {
+    width: 15%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-bar-right {
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.primary-button {
+    color: #fff;
+    text-decoration: none;
+    background-color: #BCA0BC;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.secondary-button {
+    color: #fff;
+    text-decoration: none;
+    border: #BCA0BC 1px solid;
+    border-radius: 4px;
+    padding: 10px 15px;
+    background-color: transparent;
+}
+
+.third-button {
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+}
+
+.username-placeholder {
+    color: #fff;
+    font-weight: 600;
+}
