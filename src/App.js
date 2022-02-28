@@ -20,7 +20,8 @@ function App() {
   useEffect(() => {
     async function checkLoggedIn() {
       const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}/loggedin`
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/loggedin`,
+        { withCredentials: true }
       );
       if (response.data) {
         setCurrentLoggedInUser(response.data);
